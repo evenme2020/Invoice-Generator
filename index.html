@@ -99,6 +99,7 @@ th {
   
 <div class="container">
   <img src="Header.png" id="logo0" crossorigin="anonymous" style="display: none;">
+  <img src="Stamp.png" id="stamp" crossorigin="anonymous" style="display: none;">
 
    <h2>Tax Invoice Generator</h2>
   
@@ -467,7 +468,7 @@ th {
           didDrawCell: function (data) {
             // Target the large cell in the first footer row
             if (data.row.index === items.length && data.column.index === 0) {
-              const img = document.getElementById('logo0'); // Replace with your actual image ID
+              const img = document.getElementById('stamp'); // Replace with your actual image ID
               const canvas = document.createElement('canvas');
               canvas.width = img.width;
               canvas.height = img.height;
@@ -478,8 +479,8 @@ th {
               // Calculate position inside the cell
               const x = data.cell.x + 5;
               const y = data.cell.y + 5;
-              const width = data.cell.width - 10;
-              const height = data.cell.height * 4 - 10; // Because rowSpan = 4
+              const width = 20;
+              const height = 20; // Because rowSpan = 4
 
               doc.addImage(imgData, 'PNG', x, y, width, height);
             }
