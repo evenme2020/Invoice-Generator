@@ -490,7 +490,7 @@ th {
 
         ///////////////////////
 
-        const img3 = document.getElementById('logo2');
+        const img3 = document.getElementById('logo3');
 
         const canvas3 = document.createElement('canvas');
         canvas3.width = img3.width;
@@ -501,6 +501,80 @@ th {
 
         // Add to PDF
         doc.addImage(imgData3, 'PNG', finalX+40, finalY+16, 20, 10); // x, y, width, height
+
+
+         ///////////////////////
+
+         const img4 = document.getElementById('logo4');
+
+         const canvas4 = document.createElement('canvas');
+         canvas4.width = img4.width;
+         canvas4.height = img4.height;
+         const ctx4 = canvas4.getContext('2d');
+         ctx4.drawImage(img4, 0, 0);
+         const imgData4 = canvas4.toDataURL('image/png'); // Base64 string
+ 
+         // Add to PDF
+         doc.addImage(imgData4, 'PNG', finalX+60, finalY+16, 20, 10); // x, y, width, height
+
+
+          ///////////////////////
+
+          const img5 = document.getElementById('logo5');
+
+          const canvas5 = document.createElement('canvas');
+          canvas5.width = img5.width;
+          canvas5.height = img5.height;
+          const ctx5 = canvas5.getContext('2d');
+          ctx5.drawImage(img5, 0, 0);
+          const imgData5 = canvas5.toDataURL('image/png'); // Base64 string
+  
+          // Add to PDF
+          doc.addImage(imgData5, 'PNG', finalX+80, finalY+16, 20, 10); // x, y, width, height
+
+
+           ///////////////////////
+
+           const img6 = document.getElementById('logo6');
+
+           const canvas6 = document.createElement('canvas');
+           canvas6.width = img6.width;
+           canvas6.height = img6.height;
+           const ctx6 = canvas6.getContext('2d');
+           ctx6.drawImage(img6, 0, 0);
+           const imgData6 = canvas6.toDataURL('image/png'); // Base64 string
+   
+           // Add to PDF
+           doc.addImage(imgData6, 'PNG', finalX+100, finalY+16, 20, 10); // x, y, width, height
+
+           ///////////////////////
+
+           const img7 = document.getElementById('logo6');
+
+           const canvas7 = document.createElement('canvas');
+           canvas7.width = img7.width;
+           canvas7.height = img7.height;
+           const ctx7 = canvas7.getContext('2d');
+           ctx6.drawImage(img7, 0, 0);
+           const imgData7 = canvas7.toDataURL('image/png'); // Base64 string
+   
+           // Add to PDF
+           doc.addImage(imgData7, 'PNG', finalX+120, finalY+16, 20, 10); // x, y, width, height
+
+
+            ///////////////////////
+
+            const img8 = document.getElementById('logo6');
+
+            const canvas8 = document.createElement('canvas');
+            canvas8.width = img8.width;
+            canvas8.height = img8.height;
+            const ctx8 = canvas8.getContext('2d');
+            ctx8.drawImage(img8, 0, 0);
+            const imgData8 = canvas8.toDataURL('image/png'); // Base64 string
+    
+            // Add to PDF
+            doc.addImage(imgData8, 'PNG', finalX+140, finalY+16, 20, 10); // x, y, width, height
 
 
 
