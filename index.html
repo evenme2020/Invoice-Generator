@@ -314,7 +314,7 @@ th {
       });
 
       const discount = parseInt(discountAmount) || 0;
-      const netAmount = mainTotal - ((discount/100)*mainTotal);
+      const netAmount = mainTotal - discount;//((discount/100)*mainTotal);
       const vatAmount = netAmount * 0.05;
       const grandTotal = netAmount + vatAmount;
 
@@ -391,11 +391,11 @@ th {
 
 
         tableBody.push(
-          [{ content: '', colSpan: 5, rowSpan: 4, styles: { halign: 'left',valign: 'middle', fontStyle: 'bold' } }, {content: 'Total', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${subtotal.toFixed(2)}`],
-          [ {content: 'Discount',colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${discount.toFixed(2)}`],
-          [ {content: 'Taxable Amount', colSpan: 2,  styles: {fillColor: [150,54,52], textColor: 255} }, `${netAmount.toFixed(2)}`],
-          [ {content: 'Tax 5%', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${vatAmount.toFixed(2)}`],
-          [ {content: `${amountInWords}`,colSpan: 5, styles: {fillColor: [150,54,52], textColor: 255} },{content: `Net Amount`,colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${grandTotal.toFixed(2)}`]
+          [{ content: '', colSpan: 5, rowSpan: 4, styles: { halign: 'left',valign: 'middle', fontStyle: 'bold' } }, {content: 'Total', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255, cellPadding: 4} }, `${mainTotal.toFixed(2)}`],
+          [ {content: 'Discount',colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255, cellPadding: 4} }, `${discount.toFixed(2)}`],
+          [ {content: 'Taxable Amount', colSpan: 2,  styles: {fillColor: [150,54,52], textColor: 255, cellPadding: 4} }, `${netAmount.toFixed(2)}`],
+          [ {content: 'Tax 5%', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255, cellPadding: 4} }, `${vatAmount.toFixed(2)}`],
+          [ {content: `${amountInWords}`,colSpan: 5, styles: {fillColor: [150,54,52], textColor: 255} },{content: `Net Amount`,colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255, cellPadding: 4} }, `${grandTotal.toFixed(2)}`]
         );   
         
         doc.autoTable({
