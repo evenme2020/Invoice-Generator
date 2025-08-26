@@ -463,7 +463,28 @@ th {
             7: { halign: 'right', fontStyle: 'bold' }
           },
           tableLineWidth: 0.3,
-          tableLineColor: [0,0,0]
+          tableLineColor: [0,0,0],
+          didDrawCell: function (data) {
+            // Target the large cell in the first footer row
+            if (data.row.index === items.length && data.column.index === 0) {
+              const img = document.getElementById('logo0'); // Replace with your actual image ID
+              const canvas = document.createElement('canvas');
+              canvas.width = img.width;
+              canvas.height = img.height;
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(img, 0, 0);
+              const imgData = canvas.toDataURL('image/png');
+
+              // Calculate position inside the cell
+              const x = data.cell.x + 5;
+              const y = data.cell.y + 5;
+              const width = data.cell.width - 10;
+              const height = data.cell.height * 4 - 10; // Because rowSpan = 4
+
+              doc.addImage(imgData, 'PNG', x, y, width, height);
+            }
+          }
+
         });
 
         doc.setFontSize(10);
