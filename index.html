@@ -314,7 +314,7 @@ th {
       });
 
       const discount = parseInt(discountAmount) || 0;
-      const netAmount = mainTotal - discount;
+      const netAmount = mainTotal - ((discount/100)*mainTotal);
       const vatAmount = netAmount * 0.05;
       const grandTotal = netAmount + vatAmount;
 
