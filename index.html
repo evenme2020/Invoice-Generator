@@ -128,6 +128,11 @@ th {
    Customer Code: <input type="text" id="customerCode">
    Due Date: <input type="text" id="invoiceDueDate">
    </fieldset>
+
+   <fieldset>
+    <legend><strong>Discount Info</strong></legend>
+    Discount:  <input type="number" id="discount">
+    </fieldset>
   
    <table id="itemsTable">
    <thead>
@@ -284,6 +289,8 @@ th {
         invoiceDueDate: document.getElementById('invoiceDueDate').value
       };
 
+      const discountAmount = document.getElementById('discount').value;
+
       const rows = document.querySelectorAll('#itemsBody tr');
       let items = [];
       let subtotal = 0;
@@ -306,7 +313,7 @@ th {
         ]);
       });
 
-      const discount = 0;
+      const discount = discountAmount || 0;
       const netAmount = mainTotal - discount;
       const vatAmount = netAmount * 0.05;
       const grandTotal = netAmount + vatAmount;
@@ -448,7 +455,8 @@ th {
             fillColor: [150,54,52], // light red (approx. 75% red)
             textColor: 255,             // white text
             halign: 'center',
-            valign: 'middle'
+            valign: 'middle',
+            cellPadding: { top: 4, bottom: 4 } 
           },
           columnStyles: {
             6: { halign: 'right' },
