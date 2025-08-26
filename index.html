@@ -162,14 +162,14 @@ th {
    <button onclick="generateInvoice()">Generate Invoice PDF</button>
    </div>
 
-   <img src="Picture1.png" id="logo1" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture2.png" id="logo2" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture3.png" id="logo3" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture4.png" id="logo4" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture5.png" id="logo5" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture6.png" id="logo6" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture7.png" id="logo7" crossorigin="anonymous" style="visibility: hidden;">
-   <img src="Picture8.png" id="logo8" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture1.png" id="logo1" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture2.png" id="logo2" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture3.png" id="logo3" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture4.png" id="logo4" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture5.png" id="logo5" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture6.png" id="logo6" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture7.png" id="logo7" crossorigin="anonymous"  style="display: none;">
+   <img src="Picture8.png" id="logo8" crossorigin="anonymous"  style="display: none;">
   
 
   <script>
@@ -337,22 +337,22 @@ th {
         const imgData0 = canvas0.toDataURL('image/png'); // Base64 string
   
         // Add to PDF
-        doc.addImage(imgData0, 'PNG', 14, 0, 70, 30); // x, y, width, height
+        doc.addImage(imgData0, 'PNG', 14, 0, 70, 40); // x, y, width, height
 
         doc.setFontSize(12).setFont(undefined,'bold');
 
         doc.setTextColor(0,0,0);
-        doc.text('MAX',14,35);
+        doc.text('MAX',14,45);
 
         const maxWidth = doc.getTextWidth('MAX')
 
         doc.setTextColor(139,0,0);
-        doc.text('FORCE',14+maxWidth,35);
+        doc.text('FORCE',14+maxWidth,45);
 
         const maxWidth2 = doc.getTextWidth('MAXFORCE');
 
         doc.setTextColor(0,0,0);
-        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,35);
+        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,45);
        /* doc.text(`Invoice #: ${invoice.number}`, 10, 65);
         doc.text(`Date: ${invoice.date}`, 80, 65);
         doc.text(`Customer Code: ${invoice.code}`, 140, 65);*/
@@ -383,7 +383,7 @@ th {
         );   
         
         doc.autoTable({
-          startY: 40,
+          startY: 50,
           body: [
             ['Dubai - UAE', {content: 'Inv Date', styles: {fillColor: [139, 0, 0], textColor: 255} }, {content: 'Inv No', styles: {fillColor: [139, 0, 0], textColor: 255} }],
             ['Tel : 00971 507881776 ',`${invoice.date}`,`${invoice.number}`],
