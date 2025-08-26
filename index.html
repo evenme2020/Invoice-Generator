@@ -337,22 +337,22 @@ th {
         const imgData0 = canvas0.toDataURL('image/png'); // Base64 string
   
         // Add to PDF
-        doc.addImage(imgData0, 'PNG', 14, 0, 35, 30); // x, y, width, height
+        doc.addImage(imgData0, 'PNG', 14, 0, 95, 30); // x, y, width, height
 
         doc.setFontSize(12).setFont(undefined,'bold');
 
         doc.setTextColor(0,0,0);
-        doc.text('MAX',14,65);
+        doc.text('MAX',14,35);
 
         const maxWidth = doc.getTextWidth('MAX')
 
         doc.setTextColor(139,0,0);
-        doc.text('FORCE',14+maxWidth,65);
+        doc.text('FORCE',14+maxWidth,35);
 
         const maxWidth2 = doc.getTextWidth('MAXFORCE');
 
         doc.setTextColor(0,0,0);
-        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,65);
+        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,35);
        /* doc.text(`Invoice #: ${invoice.number}`, 10, 65);
         doc.text(`Date: ${invoice.date}`, 80, 65);
         doc.text(`Customer Code: ${invoice.code}`, 140, 65);*/
