@@ -337,22 +337,24 @@ th {
         const imgData0 = canvas0.toDataURL('image/png'); // Base64 string
   
         // Add to PDF
-        doc.addImage(imgData0, 'PNG', 14, 10, 70, 40); // x, y, width, height
+        doc.addImage(imgData0, 'PNG', 14, 5, 70, 40); // x, y, width, height
+        doc.setFillColor(192,0,0);
+        doc.rect(14,5, 210, 10, 'F'); 
 
         doc.setFontSize(12).setFont(undefined,'bold');
 
         doc.setTextColor(0,0,0);
-        doc.text('MAX',14,55);
+        doc.text('MAX',14,50);
 
         const maxWidth = doc.getTextWidth('MAX')
 
         doc.setTextColor(139,0,0);
-        doc.text('FORCE',14+maxWidth,55);
+        doc.text('FORCE',14+maxWidth,50);
 
         const maxWidth2 = doc.getTextWidth('MAXFORCE');
 
         doc.setTextColor(0,0,0);
-        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,55);
+        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,50);
        /* doc.text(`Invoice #: ${invoice.number}`, 10, 65);
         doc.text(`Date: ${invoice.date}`, 80, 65);
         doc.text(`Customer Code: ${invoice.code}`, 140, 65);*/
@@ -383,7 +385,7 @@ th {
         );   
         
         doc.autoTable({
-          startY: 60,
+          startY: 55,
           body: [
             ['Dubai - UAE', {content: 'Inv Date', styles: {fillColor: [150,54,52], textColor: 255} }, {content: 'Inv No', styles: {fillColor: [150,54,52], textColor: 255} }],
             ['Tel : 00971 507881776 ',`${invoice.date}`,`${invoice.number}`],
