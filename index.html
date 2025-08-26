@@ -98,7 +98,7 @@ th {
 <body>
   
 <div class="container">
-  <img src="Header.png" id="logo0" crossorigin="anonymous" style="visibility: hidden;">
+  <img src="Header.png" id="logo0" crossorigin="anonymous" style="display: none;">
 
    <h2>Tax Invoice Generator</h2>
   
@@ -337,7 +337,7 @@ th {
         const imgData0 = canvas0.toDataURL('image/png'); // Base64 string
   
         // Add to PDF
-        doc.addImage(imgData0, 'PNG', 14, 0, 95, 30); // x, y, width, height
+        doc.addImage(imgData0, 'PNG', 14, 0, 70, 30); // x, y, width, height
 
         doc.setFontSize(12).setFont(undefined,'bold');
 
@@ -383,7 +383,7 @@ th {
         );   
         
         doc.autoTable({
-          startY: 70,
+          startY: 40,
           body: [
             ['Dubai - UAE', {content: 'Inv Date', styles: {fillColor: [139, 0, 0], textColor: 255} }, {content: 'Inv No', styles: {fillColor: [139, 0, 0], textColor: 255} }],
             ['Tel : 00971 507881776 ',`${invoice.date}`,`${invoice.number}`],
