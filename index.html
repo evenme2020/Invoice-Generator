@@ -161,6 +161,13 @@ th {
    </div>
 
    <img src="Picture1.png" id="logo1" crossorigin="anonymous" >
+   <img src="Picture2.png" id="logo2" crossorigin="anonymous" >
+   <img src="Picture3.png" id="logo3" crossorigin="anonymous" >
+   <img src="Picture4.png" id="logo4" crossorigin="anonymous" >
+   <img src="Picture5.png" id="logo5" crossorigin="anonymous" >
+   <img src="Picture6.png" id="logo6" crossorigin="anonymous" >
+   <img src="Picture7.png" id="logo7" crossorigin="anonymous" >
+   <img src="Picture8.png" id="logo8" crossorigin="anonymous" >
   
 
   <script>
@@ -460,12 +467,26 @@ th {
         const canvas1 = document.createElement('canvas');
         canvas1.width = img1.width;
         canvas1.height = img1.height;
-        const ctx = canvas1.getContext('2d');
-        ctx.drawImage(img1, 0, 0);
+        const ctx1 = canvas1.getContext('2d');
+        ctx1.drawImage(img1, 0, 0);
         const imgData1 = canvas1.toDataURL('image/png'); // Base64 string
 
         // Add to PDF
-        doc.addImage(imgData1, 'PNG', finalX, finalY+6, 40, 20); // x, y, width, height
+        doc.addImage(imgData1, 'PNG', finalX, finalY+6, 30, 10); // x, y, width, height
+
+        ///////////////////////
+
+        const img2 = document.getElementById('logo2');
+
+        const canvas2 = document.createElement('canvas');
+        canvas2.width = img2.width;
+        canvas2.height = img2.height;
+        const ctx2 = canvas2.getContext('2d');
+        ctx2.drawImage(img2, 0, 0);
+        const imgData2 = canvas2.toDataURL('image/png'); // Base64 string
+
+        // Add to PDF
+        doc.addImage(imgData2, 'PNG', finalX+50, finalY+6, 30, 10); // x, y, width, height
 
 
 
