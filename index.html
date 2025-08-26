@@ -100,9 +100,9 @@ th {
 <div class="container">
    <h2>Tax Invoice Generator</h2>
   
-   <label>Upload Logo:
+   <!-- <label>Upload Logo:
    <input type="file" id="logoInput" accept="image/*">
-   </label><br><br>
+   </label><br><br> -->
   
    <fieldset>
    <legend><strong>Customer Info</strong></legend>
@@ -160,14 +160,14 @@ th {
    <button onclick="generateInvoice()">Generate Invoice PDF</button>
    </div>
 
-   <img src="Picture1.png" id="logo1" crossorigin="anonymous" >
-   <img src="Picture2.png" id="logo2" crossorigin="anonymous" >
-   <img src="Picture3.png" id="logo3" crossorigin="anonymous" >
-   <img src="Picture4.png" id="logo4" crossorigin="anonymous" >
-   <img src="Picture5.png" id="logo5" crossorigin="anonymous" >
-   <img src="Picture6.png" id="logo6" crossorigin="anonymous" >
-   <img src="Picture7.png" id="logo7" crossorigin="anonymous" >
-   <img src="Picture8.png" id="logo8" crossorigin="anonymous" >
+   <img src="Picture1.png" id="logo1" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture2.png" id="logo2" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture3.png" id="logo3" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture4.png" id="logo4" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture5.png" id="logo5" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture6.png" id="logo6" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture7.png" id="logo7" crossorigin="anonymous" style="visibility: hidden;">
+   <img src="Picture8.png" id="logo8" crossorigin="anonymous" style="visibility: hidden;">
   
 
   <script>
@@ -309,7 +309,7 @@ th {
       const vatAmount = netAmount * 0.05;
       const grandTotal = netAmount + vatAmount;
 
-      const logoInput = document.getElementById('logoInput');
+      /*const logoInput = document.getElementById('logoInput');
       if (logoInput.files.length > 0) {
         const reader = new FileReader();
         reader.onload = function (e) {
@@ -318,9 +318,9 @@ th {
           drawContent();
         };
         reader.readAsDataURL(logoInput.files[0]);
-      } else {
+      } else {*/
         drawContent();
-      }
+      //}
 
       function drawContent() {
         doc.setFontSize(18);
