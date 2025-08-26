@@ -159,6 +159,8 @@ th {
    <button onclick="addRow()">Add Item</button><br><br>
    <button onclick="generateInvoice()">Generate Invoice PDF</button>
    </div>
+
+   <img src="Picture1.png" id="logo1" crossorigin="anonymous" >
   
 
   <script>
@@ -452,6 +454,19 @@ th {
 
         doc.text(rightLabel, finalX + gap, y);
         doc.text(line2, finalX + gap, y+1);
+
+        const img1 = document.getElementById('logo1');
+
+        const canvas1 = document.createElement('canvas');
+        canvas1.width = img1.width;
+        canvas1.height = img1.height;
+        const ctx = canvas1.getContext('2d');
+        ctx.drawImage(img1, 0, 0);
+        const imgData1 = canvas1.toDataURL('image/png'); // Base64 string
+
+        // Add to PDF
+        doc.addImage(imgData, 'PNG', finalX, finalY+6, 40, 20); // x, y, width, height
+
 
 
         doc.save(`${invoice.number || 'Generated'}_Invoice_${invoice.date}_${customer.name}.pdf`);
