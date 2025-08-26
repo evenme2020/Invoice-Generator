@@ -472,7 +472,7 @@ th {
         const imgData1 = canvas1.toDataURL('image/png'); // Base64 string
 
         // Add to PDF
-        doc.addImage(imgData1, 'PNG', finalX, finalY+6, 30, 10); // x, y, width, height
+        doc.addImage(imgData1, 'PNG', finalX, finalY+16, 20, 10); // x, y, width, height
 
         ///////////////////////
 
@@ -486,7 +486,21 @@ th {
         const imgData2 = canvas2.toDataURL('image/png'); // Base64 string
 
         // Add to PDF
-        doc.addImage(imgData2, 'PNG', finalX+50, finalY+6, 30, 10); // x, y, width, height
+        doc.addImage(imgData2, 'PNG', finalX+20, finalY+16, 20, 10); // x, y, width, height
+
+        ///////////////////////
+
+        const img3 = document.getElementById('logo2');
+
+        const canvas3 = document.createElement('canvas');
+        canvas3.width = img3.width;
+        canvas3.height = img3.height;
+        const ctx3 = canvas3.getContext('2d');
+        ctx3.drawImage(img3, 0, 0);
+        const imgData3 = canvas3.toDataURL('image/png'); // Base64 string
+
+        // Add to PDF
+        doc.addImage(imgData3, 'PNG', finalX+40, finalY+16, 20, 10); // x, y, width, height
 
 
 
