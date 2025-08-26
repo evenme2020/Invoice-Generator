@@ -337,22 +337,22 @@ th {
         const imgData0 = canvas0.toDataURL('image/png'); // Base64 string
   
         // Add to PDF
-        doc.addImage(imgData0, 'PNG', 14, 0, 70, 40); // x, y, width, height
+        doc.addImage(imgData0, 'PNG', 14, 10, 70, 40); // x, y, width, height
 
         doc.setFontSize(12).setFont(undefined,'bold');
 
         doc.setTextColor(0,0,0);
-        doc.text('MAX',14,45);
+        doc.text('MAX',14,55);
 
         const maxWidth = doc.getTextWidth('MAX')
 
         doc.setTextColor(139,0,0);
-        doc.text('FORCE',14+maxWidth,45);
+        doc.text('FORCE',14+maxWidth,55);
 
         const maxWidth2 = doc.getTextWidth('MAXFORCE');
 
         doc.setTextColor(0,0,0);
-        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,45);
+        doc.text(' AUTO SPARE PARTS TRADING LLC',14+maxWidth2,55);
        /* doc.text(`Invoice #: ${invoice.number}`, 10, 65);
         doc.text(`Date: ${invoice.date}`, 80, 65);
         doc.text(`Customer Code: ${invoice.code}`, 140, 65);*/
@@ -375,19 +375,19 @@ th {
 
 
         tableBody.push(
-          [{ content: '', colSpan: 5, rowSpan: 4, styles: { halign: 'left',valign: 'middle', fontStyle: 'bold' } }, {content: 'Total', colSpan: 2, styles: {fillColor: [139, 0, 0], textColor: 255} }, `${subtotal.toFixed(2)}`],
-          [ {content: 'Discount',colSpan: 2, styles: {fillColor: [139, 0, 0], textColor: 255} }, `${discount.toFixed(2)}`],
-          [ {content: 'Taxable Amount', colSpan: 2,  styles: {fillColor: [139, 0, 0], textColor: 255} }, `${netAmount.toFixed(2)}`],
-          [ {content: 'Tax 5%', colSpan: 2, styles: {fillColor: [139, 0, 0], textColor: 255} }, `${vatAmount.toFixed(2)}`],
-          [ {content: `${amountInWords}`,colSpan: 5, styles: {fillColor: [139, 0, 0], textColor: 255} },{content: `Net Amount`,colSpan: 2, styles: {fillColor: [139, 0, 0], textColor: 255} }, `${grandTotal.toFixed(2)}`]
+          [{ content: '', colSpan: 5, rowSpan: 4, styles: { halign: 'left',valign: 'middle', fontStyle: 'bold' } }, {content: 'Total', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${subtotal.toFixed(2)}`],
+          [ {content: 'Discount',colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${discount.toFixed(2)}`],
+          [ {content: 'Taxable Amount', colSpan: 2,  styles: {fillColor: [150,54,52], textColor: 255} }, `${netAmount.toFixed(2)}`],
+          [ {content: 'Tax 5%', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${vatAmount.toFixed(2)}`],
+          [ {content: `${amountInWords}`,colSpan: 5, styles: {fillColor: [150,54,52], textColor: 255} },{content: `Net Amount`,colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${grandTotal.toFixed(2)}`]
         );   
         
         doc.autoTable({
-          startY: 50,
+          startY: 60,
           body: [
-            ['Dubai - UAE', {content: 'Inv Date', styles: {fillColor: [139, 0, 0], textColor: 255} }, {content: 'Inv No', styles: {fillColor: [139, 0, 0], textColor: 255} }],
+            ['Dubai - UAE', {content: 'Inv Date', styles: {fillColor: [150,54,52], textColor: 255} }, {content: 'Inv No', styles: {fillColor: [150,54,52], textColor: 255} }],
             ['Tel : 00971 507881776 ',`${invoice.date}`,`${invoice.number}`],
-            ['Email : myfns5@gmail.com ',{content: 'Customer Id', styles: {fillColor: [139, 0, 0], textColor: 255} },{content: 'Due Date', styles: {fillColor: [139, 0, 0], textColor: 255} }],
+            ['Email : myfns5@gmail.com ',{content: 'Customer Id', styles: {fillColor: [150,54,52], textColor: 255} },{content: 'Due Date', styles: {fillColor: [150,54,52], textColor: 255} }],
             ['',`${invoice.code}`,`${invoice.invoiceDueDate}`]
           ],
           theme: 'grid',
@@ -412,7 +412,7 @@ th {
           theme: 'grid',
           styles: { fontSize: 8, lineWidth: 0.3, lineColor: [0,0,0]},
           headStyles: {
-            fillColor: [139, 0, 0],
+            fillColor: [150,54,52],
             textColor: 255,
             halign: 'left'
           },
@@ -436,7 +436,7 @@ th {
           theme: 'grid',
           styles: { fontSize: 8, lineWidth: 0.3, lineColor: [0,0,0]},
           headStyles: {
-            fillColor: [139, 0, 0], // light red (approx. 75% red)
+            fillColor: [150,54,52], // light red (approx. 75% red)
             textColor: 255,             // white text
             halign: 'center',
             valign: 'middle'
