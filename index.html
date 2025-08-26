@@ -313,7 +313,7 @@ th {
         ]);
       });
 
-      const discount = discountAmount || 0;
+      const discount = parseInt(discountAmount) || 0;
       const netAmount = mainTotal - discount;
       const vatAmount = netAmount * 0.05;
       const grandTotal = netAmount + vatAmount;
