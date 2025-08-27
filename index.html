@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Tax Invoice Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
   <style>
@@ -106,6 +106,13 @@ th {
    <!-- <label>Upload Logo:
    <input type="file" id="logoInput" accept="image/*">
    </label><br><br> -->
+   <fieldset>
+    <legend><strong>Invoice Info</strong></legend>
+    Invoice Number: <input type="text" id="invoiceNumber">
+    Invoice Date: <input type="date" id="invoiceDate">
+    Customer Code: <input type="text" id="customerCode">
+    Due Date: <input type="date" id="invoiceDueDate">
+    </fieldset>
   
    <fieldset>
    <legend><strong>Customer Info</strong></legend>
@@ -122,13 +129,7 @@ th {
    Company Address: <input type="text" id="companyAddress">
    </fieldset>-->
   
-   <fieldset>
-   <legend><strong>Invoice Info</strong></legend>
-   Invoice Number: <input type="text" id="invoiceNumber">
-   Invoice Date: <input type="date" id="invoiceDate">
-   Customer Code: <input type="text" id="customerCode">
-   Due Date: <input type="date" id="invoiceDueDate">
-   </fieldset>
+   
 
    <fieldset>
     <legend><strong>Discount Info</strong></legend>
@@ -179,6 +180,22 @@ th {
   
 
   <script>
+
+
+let customerData = [];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      Papa.parse('codes.csv', {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function (results) {
+          customerData = results.data;
+          console.log('Customer data loaded:', customerData);
+        }
+      });
+    });
+
 
 
     function toAEDWords(amount) {
@@ -337,6 +354,7 @@ th {
         doc.rect(14,6.6, 180, 3.2, 'F'); 
         //doc.setFontSize(18);
         //doc.text("TAX INVOICE", 105, 20, null, null, 'center');
+        
         const img0 = document.getElementById('logo0');
 
         const canvas0 = document.createElement('canvas');
