@@ -197,6 +197,20 @@ let customerData = [];
     });
 
 
+document.getElementById('customerCode').addEventListener('input', function () {
+  const code = this.value.trim();
+  const customer = customerData.find(c => c['customerCode'] === code);
+  if (customer) {
+    document.getElementById('customerName').value = customer['customerName'] || '';
+    document.getElementById('customerAddress').value = customer['customerAddress'] || '';
+    document.getElementById('customerPhone').value = customer['customerPhone'] || '';
+    document.getElementById('customerEmail').value = customer['customerEmail'] || '';
+    document.getElementById('customerTRN').value = customer['customerTRN'] || '';
+  }
+});
+
+
+
 
     function toAEDWords(amount) {
       const ones = ['zero','one','two','three','four','five','six','seven','eight','nine',
