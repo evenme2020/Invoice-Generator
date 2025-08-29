@@ -115,16 +115,21 @@ th {
     
     </fieldset>
 
+  
     <fieldset>
       <legend><strong>Invoice Type</strong></legend>
-      <label style="display: inline-block; margin-right: 20px;">
-        <input type="radio" name="invoiceType" value="Cash Invoice" checked> Cash Invoice
-      </label>
-      <label style="display: inline-block;">
-        <input type="radio" name="invoiceType" value="Credit Invoice"> Credit Invoice
-      </label>
+      <div style="display: flex; gap: 20px;">
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="invoiceType" value="Sales Invoice" checked>
+          <span style="margin-left: 5px;">Sales Invoice</span>
+        </label>
+        <label style="display: flex; align-items: center;">
+          <input type="radio" name="invoiceType" value="Credit Invoice">
+          <span style="margin-left: 5px;">Credit Invoice</span>
+        </label>
+      </div>
     </fieldset>
-  
+
    <fieldset>
    <legend><strong>Customer Info</strong></legend>
    Name: <input type="text" id="customerName">
