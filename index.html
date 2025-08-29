@@ -508,10 +508,10 @@ document.getElementById('customerCode').addEventListener('input', function () {
               const imgData = canvas.toDataURL('image/png');
 
               // Calculate position inside the cell
-              const x = data.cell.x + 25;
+              const x = data.cell.x + 45;
               const y = data.cell.y + 2;
-              const width = 20;
-              const height = 20; // Because rowSpan = 4
+              const width = 30;
+              const height = 30; // Because rowSpan = 4
 
               doc.addImage(imgData, 'PNG', x, y, width, height);
             }
