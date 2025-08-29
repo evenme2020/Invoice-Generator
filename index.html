@@ -211,6 +211,14 @@ document.getElementById('customerCode').addEventListener('input', function () {
 
 
 
+window.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+  document.getElementById('invoiceDate').value = today;
+  document.getElementById('invoiceDueDate').value = today;
+});
+
+
+
 
     function toAEDWords(amount) {
       const ones = ['zero','one','two','three','four','five','six','seven','eight','nine',
