@@ -428,7 +428,7 @@ document.getElementById('customerCode').addEventListener('input', function () {
           [ {content: 'Discount',colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${discount.toFixed(2)}`],
           [ {content: 'Taxable Amount', colSpan: 2,  styles: {fillColor: [150,54,52], textColor: 255} }, `${netAmount.toFixed(2)}`],
           [ {content: 'Tax 5%', colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, `${vatAmount.toFixed(2)}`],
-          [ {content: `${amountInWords}`,colSpan: 5, styles: {fillColor: [150,54,52], textColor: 255} },{content: `Net Amount`,colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, {content : `${grandTotal.toFixed(2)}`, styles: { fontStyle: 'bold',  fontSize: 18 } }]
+          [ {content: `${amountInWords}`,colSpan: 5, styles: {fillColor: [150,54,52], textColor: 255} },{content: `Net Amount`,colSpan: 2, styles: {fillColor: [150,54,52], textColor: 255} }, {content : `${grandTotal.toFixed(2)}`, styles: { fontStyle: 'bold',  fontSize: 14 } }]
         );   
         
         doc.autoTable({
@@ -512,7 +512,7 @@ document.getElementById('customerCode').addEventListener('input', function () {
 
               // Calculate position inside the cell
               const x = data.cell.x + 45;
-              const y = data.cell.y - 2;
+              const y = data.cell.y + 4;
               const width = 25;
               const height = 25; // Because rowSpan = 4
 
