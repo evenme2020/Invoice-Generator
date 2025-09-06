@@ -529,8 +529,8 @@ const invoiceType = document.querySelector('input[name="invoiceType"]:checked').
             7: { halign: 'right', fontStyle: 'bold' }
           },
           tableLineWidth: 0.3,
-          tableLineColor: [0,0,0],
-          didDrawCell: function (data) {
+          tableLineColor: [0,0,0]
+          /*didDrawCell: function (data) {
             // Target the large cell in the first footer row
             if (data.row.index === items.length && data.column.index === 0) {
               const img = document.getElementById('stamp'); // Replace with your actual image ID
@@ -549,7 +549,7 @@ const invoiceType = document.querySelector('input[name="invoiceType"]:checked').
 
               doc.addImage(imgData, 'PNG', x, y, width, height);
             }
-          }
+          }*/
 
         });
 
